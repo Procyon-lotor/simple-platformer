@@ -6,8 +6,97 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <h1>Simple Platformer</h1>
+  
+<!-- LEVEL SELECT -->
+<div id="level-select">
+  <button id="level1-btn" onclick="stage=1">Level 1</button>
+  <button onclick="stage=2; levelSelect.style.display='none'; statSetup.style.display='block';">Level 2</button>
+  <button onclick="stage=3; levelSelect.style.display='none'; statSetup.style.display='block';">Level 3</button>
+  <button onclick="stage=4; levelSelect.style.display='none'; statSetup.style.display='block';">Level 4</button>
+  <button onclick="stage=5; levelSelect.style.display='none'; statSetup.style.display='block';">Level 5</button>
+  <button onclick="stage=6; levelSelect.style.display='none'; statSetup.style.display='block';">Level 6</button>
+  <button onclick="stage=7; levelSelect.style.display='none'; statSetup.style.display='block';">Level 7</button>
+  <button onclick="stage=8; levelSelect.style.display='none'; statSetup.style.display='block';">Level 8</button>
+  <button onclick="stage=9; levelSelect.style.display='none'; statSetup.style.display='block';">Level 9</button>
+  <button onclick="stage=10; levelSelect.style.display='none'; statSetup.style.display='block';">Level 10</button>
+  <button onclick="stage=11; levelSelect.style.display='none'; statSetup.style.display='block';">Level 11</button>
+  <button onclick="stage=12; levelSelect.style.display='none'; statSetup.style.display='block';">Level 12</button>
+  <button onclick="stage=13; levelSelect.style.display='none'; statSetup.style.display='block';">Level 13</button>
+  <button onclick="stage=14; levelSelect.style.display='none'; statSetup.style.display='block';">Level 14</button>
+  <button onclick="stage=15; levelSelect.style.display='none'; statSetup.style.display='block';">Level 15</button>
+  <button onclick="stage=16; levelSelect.style.display='none'; statSetup.style.display='block';">Level 16</button>
+  <button onclick="stage=17; levelSelect.style.display='none'; statSetup.style.display='block';">Level 17</button>
+  <button onclick="stage=18; levelSelect.style.display='none'; statSetup.style.display='block';">Level 18</button>
+  <button onclick="stage=19; levelSelect.style.display='none'; statSetup.style.display='block';">Level 19</button>
+  <button onclick="stage=20; levelSelect.style.display='none'; statSetup.style.display='block';">Level 20</button>
+</div>
+
+  
+  <!-- STAT SETUP -->
+  <div id="stat-setup">
+    <h2>Set Your Stats</h2>
+
+    <label>Jumping: <input type="text" id="jumping" value="3"></label>
+    <label>Speed: <input type="text" id="speed" value="5"></label>
+    <label>Damage: <input type="text" id="damage" value="1"></label>
+    <label>Health: <input type="text" id="health" value="10"></label>
+    <label>Defense: <input type="text" id="defense" value="0"></label>
+    <label>Fireball Range: <input type="text" id="fireballRange" value="5"></label>
+    <label>All Other Stats (%): <input type="text" id="allStatsBoost" value="0"></label>
+
+    <label><input type="checkbox" id="jumpControl"> Enable Jump Control</label>
+    <label><input type="checkbox" id="speedControl"> Enable Speed Control</label>
+
+    <label>
+      Player Color:
+      <select id="playerColor">
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="lightgreen">Light Green</option>
+        <option value="darkgreen">Dark Green</option>
+        <option value="aqua">Aqua</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+        <option value="pink">Pink</option>
+        <option value="brown">Brown</option>
+        <option value="gray">Gray</option>
+        <option value="black">Black</option>
+      </select>
+    </label>      
+
+    <button id="start-level-btn">Start Level</button>
+  </div>
+  
+  <!-- GAME CANVAS -->
   <canvas id="game" width="600" height="300"></canvas>
+  
+  <!-- CONGRATULATIONS SCREEN -->
+  <div id="congrats-screen">
+    <div id="congrats-content"></div>
+    <button id="back-to-levels">Back to Levels</button>
+  </div>
+
+  <!-- CONTROL SLIDERS -->
+<div id="control-panel" style="display:none; position:absolute; bottom:10px; right:10px; background:#1f3f7f; padding:10px; border-radius:8px;">
+  <div id="jump-control-ui" style="display:none; margin-bottom:10px;">
+    <label>
+      Jump Control:
+      <input type="range" id="jumpSpeedSlider">
+      <span id="jumpSpeedValue"></span>
+    </label>
+  </div>
+
+  <div id="speed-control-ui" style="display:none;">
+    <label>
+      Speed Control:
+      <input type="range" id="speedSlider">
+      <span id="speedValue"></span>
+    </label>
+  </div>
+</div>
 
   <script src="game.js"></script>
 </body>

@@ -1,14 +1,105 @@
+/* General page styles */
 body {
-    background: #222;
+    margin: 0;
+    background-color: #0f1f3f;
     color: white;
     text-align: center;
     font-family: Arial, sans-serif;
-  }
-  
-  canvas {
-    background: #87ceeb;
-    display: block;
-    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Canvas (game panel) */
+#game {
+    background-color: #87CEFA; /* light blue */
+    display: none;
     border: 2px solid black;
-  }
-  
+    margin: 20px auto;
+    border-radius: 15px; /* rounded edges for game panel */
+}
+
+/* Stats panel */
+#stat-setup {
+    display: none;
+    background-color: #1f3f7f;
+    color: white;
+    padding: 20px;
+    width: 420px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#stat-setup h2 {
+    text-align: center;
+}
+
+#stat-setup label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#stat-setup input[type="text"] {
+    width: 80px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+#stat-setup input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+#stat-setup select {
+    width: 120px;
+    padding: 4px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Congratulations screen */
+#congrats-screen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f1f3f;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#congrats-content {
+    text-align: center; /* center text */
+}
+
+/* Level select buttons */
+#level-select button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#level-select {
+  display: grid;
+  grid-template-columns: repeat(5, 120px); /* 5 buttons per row, each 120px wide */
+  gap: 5px; /* spacing between buttons */
+  justify-content: start; /* align grid to the left */
+}
+
+#level-select button {
+  width: 120px; /* ensure each button is exactly 120px */
+  box-sizing: border-box;
+}
